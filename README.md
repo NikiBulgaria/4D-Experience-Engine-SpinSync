@@ -9,6 +9,8 @@ Whether you are building custom arcade cabinets, interactive restaurant displays
 ![Physics](https://img.shields.io/badge/Physics-Unity_Port-blueviolet?style=flat-square)
 ![Randomness](https://img.shields.io/badge/RNG-CSPRNG-orange?style=flat-square)
 
+<img width="3640" height="664" alt="new" src="https://github.com/user-attachments/assets/652831a6-1ba2-4ac9-b341-1e530f65ba91" />
+
 ---
 
 ## ✨ Key Features
@@ -37,6 +39,8 @@ A robust video playback and hardware testing environment (ported from `AdvancedV
 * **LedBlock:** Glowing UI indicators for real-time relay state feedback (e.g., `Motor: ON`).
 * **TriggerTimeline:** A custom clip timeline visualizing `FIRED`, `NEXT`, and `PENDING` states for every hardware trigger.
 * **PaletteEditor:** An intuitive UI for adding and managing wheel slice colors.
+
+<img width="2560" height="1440" alt="New Project (4)" src="https://github.com/user-attachments/assets/e8762110-94c7-4c77-a8ce-2ec378f6e516" />
 
 ---
 
