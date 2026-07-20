@@ -1,0 +1,292 @@
+{
+  "version": 1,
+  "playlist": [
+    {
+      "wheel_label": "Horror Clip 1",
+      "path": "E:/Downloads/Ambient TV Backlight Test Video.mp4",
+      "skip": false,
+      "force_choice": false,
+      "use_custom_chance": false,
+      "chance_weight": 50.0,
+      "start_time": 0.0,
+      "end_time": 0.0,
+      "triggers": [
+        {
+          "timestamp": 2.0,
+          "relay": "r1",
+          "state": true
+        },
+        {
+          "timestamp": 8.0,
+          "relay": "r1",
+          "state": false
+        },
+        {
+          "timestamp": 10.0,
+          "relay": "r3",
+          "state": true
+        },
+        {
+          "timestamp": 14.0,
+          "relay": "r3",
+          "state": false
+        }
+      ]
+    },
+    {
+      "wheel_label": "Horror Clip 2",
+      "path": "E:/Downloads/movie480_vp9.mp4",
+      "skip": false,
+      "force_choice": false,
+      "use_custom_chance": false,
+      "chance_weight": 50.0,
+      "start_time": 0.0,
+      "end_time": 0.0,
+      "triggers": [
+        {
+          "timestamp": 1.0,
+          "relay": "r3",
+          "state": true
+        },
+        {
+          "timestamp": 5.0,
+          "relay": "r2",
+          "state": true
+        },
+        {
+          "timestamp": 9.0,
+          "relay": "r2",
+          "state": false
+        },
+        {
+          "timestamp": 9.5,
+          "relay": "r3",
+          "state": false
+        }
+      ]
+    }
+  ],
+  "root_questions": [
+    {
+      "text": "HOW MANY ROUNDS?",
+      "log_name": "Rounds",
+      "mode": "InfiniteRandom",
+      "max_picks": 1,
+      "answers": [
+        {
+          "label": "1 Round",
+          "chance_weight": 50.0,
+          "effect": "SetLoopCount",
+          "float_value": 1.0,
+          "playlist_index": 0,
+          "skip_next_root": false,
+          "sync_label_with_video": true
+        },
+        {
+          "label": "2 Rounds",
+          "chance_weight": 35.0,
+          "effect": "SetLoopCount",
+          "float_value": 2.0,
+          "playlist_index": 0,
+          "skip_next_root": false,
+          "sync_label_with_video": true
+        },
+        {
+          "label": "3 Rounds",
+          "chance_weight": 15.0,
+          "effect": "SetLoopCount",
+          "float_value": 3.0,
+          "playlist_index": 0,
+          "skip_next_root": false,
+          "sync_label_with_video": true
+        }
+      ]
+    },
+    {
+      "text": "BREAK BETWEEN ROUNDS?",
+      "log_name": "Break",
+      "mode": "InfiniteRandom",
+      "max_picks": 1,
+      "answers": [
+        {
+          "label": "No",
+          "chance_weight": 40.0,
+          "effect": "None",
+          "float_value": 0.0,
+          "playlist_index": 0,
+          "skip_next_root": false,
+          "sync_label_with_video": true
+        },
+        {
+          "label": "15 sec",
+          "chance_weight": 35.0,
+          "effect": "SetBreakTime",
+          "float_value": 15.0,
+          "playlist_index": 0,
+          "skip_next_root": false,
+          "sync_label_with_video": true
+        },
+        {
+          "label": "30 sec",
+          "chance_weight": 25.0,
+          "effect": "SetBreakTime",
+          "float_value": 30.0,
+          "playlist_index": 0,
+          "skip_next_root": false,
+          "sync_label_with_video": true
+        }
+      ]
+    },
+    {
+      "text": "WHICH VIDEO?",
+      "log_name": "Video",
+      "mode": "InfiniteRandom",
+      "max_picks": 1,
+      "answers": [
+        {
+          "label": "Horror Clip 1",
+          "chance_weight": 100.0,
+          "effect": "PlayVideoFromPlaylist",
+          "float_value": 0.0,
+          "playlist_index": 0,
+          "skip_next_root": false,
+          "sync_label_with_video": true
+        },
+        {
+          "label": "Horror Clip 2",
+          "chance_weight": 100.0,
+          "effect": "PlayVideoFromPlaylist",
+          "float_value": 0.0,
+          "playlist_index": 1,
+          "skip_next_root": false,
+          "sync_label_with_video": true
+        }
+      ]
+    }
+  ],
+  "wheel": {
+    "target_max_speed": 1600.0,
+    "speed_variance": 500.0,
+    "acceleration_power": 200000.0,
+    "bearing_friction": 1.4,
+    "min_spin_time": 1.5,
+    "max_spin_time": 4.0,
+    "text_padding": 0.62,
+    "outcome_mode": "physics",
+    "entropy": "system",
+    "draw_min_time": 4.0,
+    "draw_max_time": 9.0,
+    "draw_min_turns": 3,
+    "draw_max_turns": 7,
+    "colors": [
+      "#e74c3c",
+      "#f39c12",
+      "#f1c40f",
+      "#2ecc71",
+      "#1abc9c",
+      "#3498db",
+      "#9b59b6",
+      "#e84393"
+    ]
+  },
+  "esp": {
+    "ip": "10.186.213.168",
+    "port": 4222,
+    "heartbeat_rate": 0.5,
+    "send_delay": 0.05,
+    "auto_connect": true,
+    "identity_probe": true,
+    "relays": [
+      {
+        "id": "r1",
+        "name": "Relay 1",
+        "pin": 38,
+        "on_label": "ON",
+        "off_label": "OFF",
+        "test_duration": 3.0
+      },
+      {
+        "id": "r2",
+        "name": "Relay 2",
+        "pin": 39,
+        "on_label": "ON",
+        "off_label": "OFF",
+        "test_duration": 3.0
+      },
+      {
+        "id": "r3",
+        "name": "Voltage",
+        "pin": 6,
+        "on_label": "ON",
+        "off_label": "OFF",
+        "test_duration": 3.0
+      }
+    ],
+    "test_sequence": [
+      {
+        "timestamp": 2.0,
+        "relay": "r1",
+        "state": true
+      },
+      {
+        "timestamp": 5.0,
+        "relay": "r1",
+        "state": false
+      },
+      {
+        "timestamp": 6.0,
+        "relay": "r2",
+        "state": true
+      },
+      {
+        "timestamp": 9.0,
+        "relay": "r2",
+        "state": false
+      },
+      {
+        "timestamp": 10.0,
+        "relay": "r3",
+        "state": true
+      },
+      {
+        "timestamp": 13.0,
+        "relay": "r3",
+        "state": false
+      }
+    ],
+    "test_sequence_length": 20.0,
+    "arg_delimiter": " ",
+    "terminator": "\r\n",
+    "local_port": 4222,
+    "bind_local_port": true,
+    "reply_timeout": 4.0,
+    "probe_interval": 2.5,
+    "link_tolerance": 15.0,
+    "sticky_link": true,
+    "auto_detect_protocol": true
+  },
+  "ui": {
+    "fade_duration": 0.8,
+    "countdown_seconds": 3,
+    "break_header": "Break",
+    "loop_header": "Repeats",
+    "fullscreen_on_start": true,
+    "show_status_bar": true,
+    "test_live_hardware": true,
+    "start_button_text": "START SYSTEM",
+    "stop_button_text": "RESET SYSTEM",
+    "volume": 1.0,
+    "muted": false,
+    "show_aspect": "fit",
+    "preview_aspect": "fit",
+    "timecode_enabled": true,
+    "timecode_corner": "top_right",
+    "timecode_opacity": 0.55,
+    "timecode_scale": 1.0,
+    "timecode_show_total": true,
+    "timecode_show_remaining": false,
+    "transport_bar": true,
+    "transport_autohide": 3.0,
+    "settings_keeps_fullscreen": false
+  }
+}
