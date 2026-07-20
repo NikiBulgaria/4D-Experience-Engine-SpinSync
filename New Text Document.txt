@@ -1,4 +1,0 @@
-4D-Experience-Engine-SpinSync
-
-
-A PyQt6 engine for 4D cinema experiences, precisely synchronizing video playback with real-time ESP32 hardware triggers and physical effects.
